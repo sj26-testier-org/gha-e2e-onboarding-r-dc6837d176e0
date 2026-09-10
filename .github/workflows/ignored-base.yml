@@ -1,12 +1,8 @@
 {
-  "name": "Merge group ci.yml",
+  "name": "Merge group ignored-base.yml",
   "on": {
-    "merge_group": null,
-    "pull_request": {
-      "types": [
-        "opened"
-      ],
-      "branches": [
+    "merge_group": {
+      "branches-ignore": [
         "queue-target"
       ]
     }
@@ -16,7 +12,7 @@
   },
   "jobs": {
     "probe": {
-      "name": "Queue gate",
+      "name": "Probe ignored-base",
       "runs-on": "ubuntu-latest",
       "timeout-minutes": 8,
       "outputs": {
@@ -42,12 +38,8 @@
             "CTX_REF": "${{ github.ref }}",
             "CTX_WORKFLOW_SHA": "${{ github.workflow_sha }}",
             "CTX_WORKFLOW_REF": "${{ github.workflow_ref }}",
-            "WORKFLOW_MARKER": "ci.yml:base-v1"
+            "WORKFLOW_MARKER": "ignored-base.yml:base-v1"
           }
-        },
-        {
-          "name": "Real queue failure gate",
-          "run": "node gate.cjs"
         }
       ]
     }

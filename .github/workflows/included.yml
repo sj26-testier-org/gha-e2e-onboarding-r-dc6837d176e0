@@ -1,13 +1,10 @@
 {
-  "name": "Merge group ci.yml",
+  "name": "Merge group included.yml",
   "on": {
-    "merge_group": null,
-    "pull_request": {
-      "types": [
-        "opened"
-      ],
+    "merge_group": {
       "branches": [
-        "queue-target"
+        "queue-target",
+        "!main"
       ]
     }
   },
@@ -16,7 +13,7 @@
   },
   "jobs": {
     "probe": {
-      "name": "Queue gate",
+      "name": "Probe included",
       "runs-on": "ubuntu-latest",
       "timeout-minutes": 8,
       "outputs": {
@@ -42,12 +39,8 @@
             "CTX_REF": "${{ github.ref }}",
             "CTX_WORKFLOW_SHA": "${{ github.workflow_sha }}",
             "CTX_WORKFLOW_REF": "${{ github.workflow_ref }}",
-            "WORKFLOW_MARKER": "ci.yml:base-v1"
+            "WORKFLOW_MARKER": "included.yml:base-v1"
           }
-        },
-        {
-          "name": "Real queue failure gate",
-          "run": "node gate.cjs"
         }
       ]
     }
