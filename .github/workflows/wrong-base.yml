@@ -38,7 +38,7 @@
             "CTX_REF": "${{ github.ref }}",
             "CTX_WORKFLOW_SHA": "${{ github.workflow_sha }}",
             "CTX_WORKFLOW_REF": "${{ github.workflow_ref }}",
-            "WORKFLOW_MARKER": "wrong-base.yml:third-pr-revision"
+            "WORKFLOW_MARKER": "wrong-base.yml:fourth-pr-revision"
           }
         }
       ]
