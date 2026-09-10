@@ -39,7 +39,7 @@
             "CTX_REF": "${{ github.ref }}",
             "CTX_WORKFLOW_SHA": "${{ github.workflow_sha }}",
             "CTX_WORKFLOW_REF": "${{ github.workflow_ref }}",
-            "WORKFLOW_MARKER": "included.yml:second-pr-v2"
+            "WORKFLOW_MARKER": "included.yml:third-pr-revision"
           }
         }
       ]
