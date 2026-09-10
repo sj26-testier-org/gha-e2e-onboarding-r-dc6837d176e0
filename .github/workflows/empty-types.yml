@@ -36,7 +36,7 @@
             "CTX_REF": "${{ github.ref }}",
             "CTX_WORKFLOW_SHA": "${{ github.workflow_sha }}",
             "CTX_WORKFLOW_REF": "${{ github.workflow_ref }}",
-            "WORKFLOW_MARKER": "empty-types.yml:base-v1"
+            "WORKFLOW_MARKER": "empty-types.yml:second-pr-v2"
           }
         }
       ]
